@@ -1,5 +1,4 @@
 @import "font-family.css";
-@import "font-family-heading.css";
 body {
   margin: 0;
   padding: 0;
@@ -550,8 +549,8 @@ section.top-banner .tpcntnt h4 {
 }
 .intro .rgt img {
   margin-bottom: 1rem;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
 }
 .intro .rgt h4 {
   color: #091638;
@@ -576,11 +575,11 @@ section.top-banner .tpcntnt h4 {
 .intro .rgt:hover {
   background: linear-gradient(133.87deg, #EDEDFF 0.98%, #FDFBFF 99.45%);
   transform: translate(0, -10px);
-  box-shadow: 0 29px 61px -64px rgb(0, 0, 0);
+  box-shadow: 0 37px 61px -64px rgb(0, 0, 0);
   transition: all 0.7s ease-in-out;
 }
 .intro .rgt:hover ::before {
-  transform: translate(-50%, -50%) scale(1, 1.25);
+  transform: translate(-50%, -50%) scale(1, 1.25) skewX(413deg);
   width: 95%;
   transition: all 0.7s ease-in-out;
 }
@@ -837,7 +836,6 @@ section.work-flow .sdmbox p {
   color: #1d1d3f;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 1.875rem;
 }
 .moreprod .sliderimg span {
   background: linear-gradient(90deg, #393185 0%, #E4097F 100%);
@@ -1476,4 +1474,4 @@ footer .socialicon li {
   .key-feature .swiper-wrapper {
     margin-left: -1.25rem;
   }
-}/*# sourceMappingURL=custom.css.map */
+}/*# sourceMappingURL=custom_20240719172142.css.map */

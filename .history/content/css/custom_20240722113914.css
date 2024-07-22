@@ -1,5 +1,5 @@
 @import "font-family.css";
-@import "font-family-heading.css";
+@import "font-family1.css";
 body {
   margin: 0;
   padding: 0;
@@ -1476,4 +1476,4 @@ footer .socialicon li {
   .key-feature .swiper-wrapper {
     margin-left: -1.25rem;
   }
-}/*# sourceMappingURL=custom.css.map */
+}/*# sourceMappingURL=custom_20240722113914.css.map */
