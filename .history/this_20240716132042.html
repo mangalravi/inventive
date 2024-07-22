@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap");
+      @import url(responsive.scss);
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .testimonial_sec {
+        width: 100%;
+        background: #08c2e3;
+        padding: 80px 0 130px 0;
+      }
+      .testimonial_sec h1 {
+        text-align: center;
+        font: normal 38px/42px "Luckiest Guy", cursive;
+      }
+      .testimonial_sec .testimonial_inner {
+        width: 100%;
+        padding-top: 35px;
+      }
+      .testimonial_sec .testimonial_inner .slick-list {
+        padding: 0px;
+        margin-left: 170px;
+      }
+      .testimonial_sec .testimonial_inner .slick-list .slick-track {
+        left: 160px;
+      }
+      .testimonial_sec .testimonial_inner .slick-list .slick-track .card {
+        margin-right: 15px;
+        border-radius: 10px;
+      }
+      .testimonial_sec
+        .testimonial_inner
+        .slick-list
+        .slick-track
+        .card
+        .card-body
+        .rating
+        > span {
+        color: #ffc004;
+      }
+      .testimonial_sec
+        .testimonial_inner
+        .slick-list
+        .slick-track
+        .card
+        .card-body
+        .card-title {
+        font: normal 15px/28px "Luckiest Guy", cursive;
+        padding-top: 5px;
+      }
+      .testimonial_sec
+        .testimonial_inner
+        .slick-list
+        .slick-track
+        .card
+        .card-body
+        .card-text {
+        font: 500 14px/21px "Urbanist", sans-serif;
+      }
+      .testimonial_sec
+        .testimonial_inner
+        .slick-list
+        .slick-track
+        .card
+        .card-body
+        strong {
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+      .testimonial_sec
+        .testimonial_inner
+        .slick-list
+        .slick-track
+        .card
+        .card-body
+        span {
+        text-transform: uppercase;
+        color: #cdcdcd;
+        font-size: 14px;
+      }
+      .testimonial_sec .testimonial_inner .slick-dots {
+        bottom: -50px;
+      }
+      .testimonial_sec .testimonial_inner .slick-dots li {
+        margin: 0 2px;
+      }
+      .testimonial_sec .testimonial_inner .slick-dots li button::before {
+        font-size: 11px;
+      }
+      .testimonial_sec .all_btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 75px;
+      }
+      .testimonial_sec .all_btn a {
+        background-color: #fe6805;
+        color: #fff;
+        padding: 10px 32px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 13px;
+        transition: 0.3s ease-in-out;
+      }
+      .testimonial_sec .all_btn a:hover {
+        background: #fff;
+        color: #fe6805;
+        filter: drop-shadow(0px 0px 2px #555);
+      }
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .testimonial_sec .testimonial_inner .slick-list .slick-track {
+          left: 122px;
+        }
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .testimonial_sec
+          .testimonial_inner
+          .slick-list
+          .slick-track
+          .card
+          .card-body
+          .card-title {
+          font-size: 14px;
+        }
+        .testimonial_sec .testimonial_inner .slick-list {
+          margin-left: 100px;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        .testimonial_sec
+          .testimonial_inner
+          .slick-list
+          .slick-track
+          .card
+          .card-body
+          .card-title {
+          font-size: 14px;
+        }
+        .testimonial_sec h1 {
+          font-size: 30px;
+          line-height: 34px;
+        }
+        .testimonial_sec .testimonial_inner .slick-list {
+          margin-left: 0px;
+          padding: 0 30px;
+        }
+        .testimonial_sec .testimonial_inner .slick-list .slick-track {
+          left: 90px;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .testimonial_sec .testimonial_inner .slick-list .slick-track {
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <div class="testimonial_sec">
+      <h1>WHAT PEOPLE ARE SAYING</h1>
+      <div class="testimonial_inner">
+        <div class="card">
+          <div class="card-body">
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h5 class="card-title">Aenean Sagittis Enim Quis</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi veniam cumque maxime doloribus doloremque recusandae
+              dolorem consequuntur modi, sit blanditiis!
+            </p>
+            <strong>Jone Doe</strong> <br />
+            <span>Manager</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h5 class="card-title">Aenean Sagittis Enim Quis</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi veniam cumque maxime doloribus doloremque recusandae
+              dolorem consequuntur modi, sit blanditiis!
+            </p>
+            <strong>Jone Doe</strong> <br />
+            <span>Manager</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h5 class="card-title">Aenean Sagittis Enim Quis</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi veniam cumque maxime doloribus doloremque recusandae
+              dolorem consequuntur modi, sit blanditiis!
+            </p>
+            <strong>Jone Doe</strong> <br />
+            <span>Manager</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h5 class="card-title">Aenean Sagittis Enim Quis</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi veniam cumque maxime doloribus doloremque recusandae
+              dolorem consequuntur modi, sit blanditiis!
+            </p>
+            <strong>Jone Doe</strong> <br />
+            <span>Manager</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h5 class="card-title">Aenean Sagittis Enim Quis</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi veniam cumque maxime doloribus doloremque recusandae
+              dolorem consequuntur modi, sit blanditiis!
+            </p>
+            <strong>Jone Doe</strong> <br />
+            <span>Manager</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h5 class="card-title">Aenean Sagittis Enim Quis</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi veniam cumque maxime doloribus doloremque recusandae
+              dolorem consequuntur modi, sit blanditiis!
+            </p>
+            <strong>Jone Doe</strong> <br />
+            <span>Manager</span>
+          </div>
+        </div>
+      </div>
+      <div class="all_btn">
+        <a href="#">See All</a>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+      $(".testimonial_inner").slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        autoplay: true,
+        prevArrow: false,
+        nextArrow: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 545,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

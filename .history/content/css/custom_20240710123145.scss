@@ -1,0 +1,529 @@
+@import "font-family.css";
+
+$primary: #bd4328;
+$secondary: #212529;
+$font-size: 16px;
+$font-weight: 400;
+$btn-primary: #091638;
+$btn-secondary: #27d692;
+$font-family-body: "Inter",
+sans-serif;
+$font-family-heading: "Playfair Display",
+serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-body;
+  font-weight: $font-weight;
+}
+
+@mixin border($width, $style, $color) {
+  border: $width $style $color;
+}
+
+section {
+  padding: 70px 0;
+}
+
+p {
+  color: $secondary;
+  font-size: 0.775rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin padding($padding) {
+  padding: $padding;
+}
+
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin display($display) {
+  display: $display;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-heading;
+  font-weight: 700;
+  color: $primary;
+  line-height: 1.35;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.ms-5 {
+  margin-left: 3rem;
+}
+
+.btn {
+  @include padding(14px 24px);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  gap: 0.75rem;
+}
+
+
+.btn-primary {
+  border: 0;
+  background: #fff;
+  color: $primary;
+}
+
+
+.btn-main {
+  text-align: center;
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  z-index: 2;
+  overflow: hidden;
+  padding: 2px;
+  border-radius: 50px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, #393185 0%, #E4097F 100%);
+    background-size: 50% 100%;
+    border-radius: 50px;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    padding: 0.875rem 0;
+    font-size: 1.1rem;
+    text-decoration: none;
+    align-items: center;
+    background: #fff;
+    border-radius: 3px;
+    display: block;
+    justify-content: center;
+    height: 100%;
+    font-size: 12px;
+    border-radius: 50px;
+  }
+
+  &:focus,
+  &:hover {
+    &:before {
+      animation: btn-main .75s linear infinite
+    }
+  }
+}
+
+@keyframes btn-main {
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+label {
+  @include font-weight(500);
+  font-size: 0.775rem;
+}
+
+ul {
+  @include padding(0);
+  margin: 0;
+
+  li {
+    list-style-type: none;
+  }
+
+  svg {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+label.required {
+  &::after {
+    content: "*";
+    color: $primary;
+    margin-left: 3px;
+  }
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+
+// grid system
+
+.container,
+.container-fluid {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  margin-right: auto;
+  margin-left: auto
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  @include display(flex);
+  flex-wrap: wrap;
+  margin-right: calc(-.5* var(--bs-gutter-x));
+  margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+.row>* {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+.col-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%
+}
+
+
+.col-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%
+}
+
+
+// header
+header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: transparent;
+  border: 0;
+  transition: all .5s ease;
+
+  .menu-extras {
+    float: right;
+
+    .navbar-toggle {
+      display: none;
+
+      .lines {
+        width: 25px;
+        display: block;
+        position: relative;
+        margin: 1.5rem 1.25rem;
+        margin-right: 0;
+
+        span {
+          height: 2px;
+          width: 100%;
+          background-color: #3c4858;
+          display: block;
+          margin-bottom: 5px;
+          transition: transform .5s ease;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  @include padding(0.75rem 0);
+
+  .navbar-toggler {
+    @include display(none);
+  }
+
+  .navbar-nav {
+    @include display(flex);
+    flex-wrap: wrap;
+    justify-content: center;
+
+    >li {
+      float: left;
+      display: block;
+      position: relative;
+      margin: 0 10px;
+
+      >a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        min-height: 60px;
+        display: block;
+        color: #212529;
+        font-size: .875rem;
+        background-color: transparent;
+        letter-spacing: .01rem;
+        line-height: 18px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+        transition: all .5s;
+
+      }
+    }
+
+
+  }
+
+}
+
+.position-relative {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  list-style: none;
+  min-width: 180px;
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 10px;
+  transition: all .2s ease;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(60, 72, 88, .15);
+
+  li {
+    display: block;
+    clear: both;
+    white-space: nowrap;
+    font-size: .845rem;
+    letter-spacing: .04em;
+    color: #3c4858;
+    transition: all .3s;
+
+
+    a.sub-menu-item {
+      display: block;
+      padding: 6px 20px;
+      clear: both;
+      white-space: nowrap;
+      font-size: .845rem;
+      letter-spacing: .04em;
+      color: #3c4858;
+      transition: all .3s;
+    }
+
+    :hover {
+      color: $primary !important;
+    }
+  }
+}
+
+.parent-menu {
+  &:hover {
+    .submenu {
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+}
+
+.menu-arrow {
+  border: solid #7f7f7f;
+  border-radius: .5px;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  position: absolute;
+  transition: all .5s;
+  right: -3px;
+  top: 1.5rem;
+}
+
+
+
+//tabs
+
+.tabs {
+  display: flex;
+}
+
+.tab-links {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 245px;
+  margin-right: 1rem;
+  min-height: 292.16px;
+}
+
+.tab-link {
+  font-weight: 600 !important;
+  border-radius: .75rem;
+  padding: 1rem !important;
+  text-align: left;
+  font-size: .95rem !important;
+  position: relative;
+
+  a {
+    display: block;
+    color: #000;
+  }
+
+
+}
+
+.tab-link.active {
+
+  color: #0d6efd;
+  background-color: rgba(0, 0, 0, .05);
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgba(0, 0, 0, .05);
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+.tab-content .tab {
+  display: none;
+  margin-bottom: .85rem;
+}
+
+.tab-content .tab.active {
+  display: block;
+}
+
+.prodlist.submenu {
+  padding: 2rem 2.5rem;
+  line-height: 1.6;
+  min-width: 170px;
+  // min-height: 300px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mgmenu {
+  li {
+    margin-bottom: 0.85rem;
+
+    a {
+      color: $btn-primary;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {
+
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:1200px) {
+
+  .container {
+    max-width: 1140px
+  }
+}
+
+@media (min-width:1400px) {
+
+  .container {
+    max-width: 1320px
+  }
+}

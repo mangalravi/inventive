@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Tabs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .tabs {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .tab-links {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .tab-link {
+        padding: 10px 20px;
+        background: #ccc;
+        border: 1px solid #999;
+        margin-right: 5px;
+      }
+
+      .tab-link:hover,
+      .tab-link.active {
+        background: #999;
+        color: white;
+      }
+
+      .tab-content .tab {
+        display: none;
+        padding: 20px;
+        border: 1px solid #999;
+        background: #f9f9f9;
+      }
+
+      .tab-content .tab.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <ul class="tab-links">
+        <li class="tab-link" data-tab="tab1">Tab 1</li>
+        <li class="tab-link" data-tab="tab2">Tab 2</li>
+        <li class="tab-link" data-tab="tab3">Tab 3</li>
+      </ul>
+      <div class="tab-content">
+        <div id="tab1" class="tab">
+          <h2>Tab 1 Content</h2>
+          <p>This is the content for Tab 1.</p>
+        </div>
+        <div id="tab2" class="tab">
+          <h2>Tab 2 Content</h2>
+          <p>This is the content for Tab 2.</p>
+        </div>
+        <div id="tab3" class="tab">
+          <h2>Tab 3 Content</h2>
+          <p>This is the content for Tab 3.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabLinks = document.querySelectorAll(".tab-link");
+        const tabs = document.querySelectorAll(".tab");
+
+        function showTab(event, tabId) {
+          // Remove active class from all tab links and tabs
+          tabLinks.forEach((link) => link.classList.remove("active"));
+          tabs.forEach((tab) => tab.classList.remove("active"));
+
+          // Add active class to the clicked/hovered tab link and corresponding tab
+          event.target.classList.add("active");
+          document.getElementById(tabId).classList.add("active");
+        }
+
+        tabLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            showTab(event, event.target.dataset.tab);
+          });
+          link.addEventListener("mouseover", function (event) {
+            showTab(event, event.target.dataset.tab);
+          });
+        });
+
+        // Initialize first tab as active
+        tabLinks[0].classList.add("active");
+        tabs[0].classList.add("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+@import "font-family.css";
+
+$primary: #bd4328;
+$secondary: #14142A;
+$font-size: 16px;
+$font-weight: 500;
+$btn-primary: #452ff6;
+$btn-secondary: #27d692;
+$font-family_1: "Inter",
+sans-serif;
+$font-family_2: "Playfair Display",
+sans-serif;
+
+:root {
+  --primary: #{var(--primary)};
+  --secondary: #{var(--secondary)};
+  --btn-primary: #{$btn-primary};
+  --btn-secondary: #{$btn-secondary};
+  --root-font-size: #{$font-size};
+  --body-font-family: #{$font-family_1};
+  --heading-font-family: #{$font-family_2};
+  --font-weight: #{$font-weight};
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight);
+}
+
+section {
+  padding: 70px 0;
+}
+
+p {
+  color: var(--primary);
+  font-size: 0.775rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.35;
+}
+
+.btn {
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
+  padding: 0.85rem 1.25rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  &:hover {
+    border: 1px solid var(--primary);
+    background-color: $background-primary;
+    color: var(--primary);
+  }
+}
+
+.btn-secondary {
+  &:hover {
+    border: 1px solid var(--secondary);
+    background-color: $background-secondary;
+    color: $color_3;
+  }
+}
+
+.btn-outline-primary {
+  border: 1px solid var(--primary);
+  background-color: $background-color_3;
+  color: var(--secondary);
+
+  &:hover {
+    border: 1px solid var(--primary);
+    background-color: $background-primary;
+    color: $color_3;
+  }
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.775rem;
+  letter-spacing: -0.5px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style-type: none;
+  }
+
+  svg {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+}
+
+.btn-secondary {
+  &:hover {
+    border: 1px solid var(--bs-btn-secondary);
+    background-color: $background-secondary;
+    color: $color_3;
+  }
+}
+
+label.required {
+  &::after {
+    content: "*";
+    color: $color_4;
+    margin-left: 3px;
+  }
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
